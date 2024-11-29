@@ -1,4 +1,4 @@
-number = (input("enter the number: "))
+number = (input())
 if number.isdigit():  
     number = int(number)
     if number < 0:
