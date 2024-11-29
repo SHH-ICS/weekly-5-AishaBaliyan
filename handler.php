@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <title>Welcome Page</title>
+    <title>π Calculator</title>
   </head>
-
   <body>
-    
     <?php
-    $myVariable = "";
-    if ( isset( $_POST['myVariable'] ) ){
-      $myVariable = $_POST['myVariable'];
+    if (isset($_POST['j'])) {
+        $input = intval($_POST['j']); 
+
+        if ($input >= 0) { 
+            $j = 1;
+            $i = 0;
+            for ($n = 0; $n <= $input; $n++) {
+                $term = $j * (4 / (2 * $n + 1));
+                $i += $term;
+                $j *= -1;
+            }
+            echo round($i, 4); 
+        } else {
+            echo "Error: Please enter a non-negative number."; 
+        }
+    } else {
+        echo "Error: No input provided."; 
     }
-    echo "<h1>My Program</h1>\n";
-    echo "<p>My Variable is = ".$myVariable."</p>\n";
     ?>
-    
   </body>
-  
 </html>
