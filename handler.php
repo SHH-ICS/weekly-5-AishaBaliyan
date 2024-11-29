@@ -6,12 +6,12 @@
   <body>
     <?php
     if (isset($_POST['j'])) {
-        $j_input = intval($_POST['j']); 
+        $input = intval($_POST['j']); 
 
-        if ($j_input >= 0) { 
+        if ($input >= 0) { 
             $j = 1;
             $i = 0;
-            for ($n = 0; $n <= $j_input; $n++) {
+            for ($n = 0; $n <= $input; $n++) {
                 $term = $j * (4 / (2 * $n + 1));
                 $i += $term;
                 $j *= -1;
